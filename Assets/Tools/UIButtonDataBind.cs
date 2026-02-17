@@ -1,4 +1,5 @@
 ﻿using AxGrid.Base;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,6 +13,11 @@ namespace AxGrid.Tools.Binders{
 	public class UIButtonDataBind : Binder
 	{
 		private Button button;
+		[SerializeField] private Image enabledImage;
+		[SerializeField] private Image disabledImage;
+		[SerializeField] private Graphic buttonTextGraphic;
+		[SerializeField] private Color enabledTextColor;
+		[SerializeField] private Color disabledTextColor;
 		/// <summary>
 		/// Имя кнопки (если пустое берется из имени объекта)
 		/// </summary>
@@ -54,6 +60,15 @@ namespace AxGrid.Tools.Binders{
 		public void awake()
 		{
 			button = GetComponent<Button>();
+			if (enabledImage == null)
+				enabledImage = button.image;
+			if (buttonTextGraphic == null)
+			{
+				buttonTextGraphic = GetComponentInChildren<TMP_Text>(true);
+				if (buttonTextGraphic == null)
+					buttonTextGraphic = GetComponentInChildren<UnityEngine.UI.Text>(true);
+			}
+
 			if (string.IsNullOrEmpty(buttonName))
 				buttonName = name;
 			
@@ -96,8 +111,35 @@ namespace AxGrid.Tools.Binders{
 
 		public void OnItemEnable()
 		{
-			if (button.interactable != Model.GetBool(enableField, defaultEnable))
-				button.interactable = Model.GetBool(enableField, defaultEnable);
+			var isEnabled = Model.GetBool(enableField, defaultEnable);
+			if (button.interactable != isEnabled)
+				button.interactable = isEnabled;
+
+			ApplyButtonImages(isEnabled);
+		}
+
+		private void ApplyButtonImages(bool isEnabled)
+		{
+			if (enabledImage != null)
+				enabledImage.enabled = isEnabled;
+
+			if (disabledImage != null)
+			{
+				disabledImage.enabled = true;
+				SetImageAlpha(disabledImage, isEnabled ? 0f : 1f);
+			}
+
+			if (buttonTextGraphic != null)
+				buttonTextGraphic.color = isEnabled ? enabledTextColor : disabledTextColor;
+		}
+
+		private static void SetImageAlpha(Image image, float alpha)
+		{
+			var c = image.color;
+			if (Mathf.Approximately(c.a, alpha))
+				return;
+			c.a = alpha;
+			image.color = c;
 		}
 
 		[OnDestroy]

@@ -454,7 +454,7 @@ MonoBehaviour:
   globalModel: 0
   enabledImage: {fileID: 197586900}
   disabledImage: {fileID: 1740054601}
-  buttonTextGraphic: {fileID: 0}
+  buttonTextGraphic: {fileID: 1750741938}
   enabledTextColor: {r: 1, g: 0.78431374, b: 0.09411765, a: 1}
   disabledTextColor: {r: 1, g: 1, b: 1, a: 1}
   buttonName: Stop
@@ -1012,18 +1012,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalModel: 0
   reelRoot: {fileID: 681663110}
-  items:
-  - {fileID: 115963839}
-  - {fileID: 2067181715}
-  - {fileID: 1539014631}
-  - {fileID: 1244434883}
-  - {fileID: 1651767857}
-  itemImages:
-  - {fileID: 115963840}
-  - {fileID: 2067181716}
-  - {fileID: 1539014632}
-  - {fileID: 1244434884}
-  - {fileID: 1651767858}
   symbols:
   - {fileID: 21300000, guid: 585110659329d724694959851f89e18a, type: 3}
   - {fileID: 21300000, guid: f862a750c0a12ad46b343504fcbce8c2, type: 3}
@@ -2122,18 +2110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalModel: 0
   reelRoot: {fileID: 904051179}
-  items:
-  - {fileID: 469131325}
-  - {fileID: 504970230}
-  - {fileID: 2043006933}
-  - {fileID: 559614786}
-  - {fileID: 1585144361}
-  itemImages:
-  - {fileID: 469131326}
-  - {fileID: 504970231}
-  - {fileID: 2043006934}
-  - {fileID: 559614787}
-  - {fileID: 1585144362}
   symbols:
   - {fileID: 21300000, guid: 585110659329d724694959851f89e18a, type: 3}
   - {fileID: 21300000, guid: f862a750c0a12ad46b343504fcbce8c2, type: 3}
@@ -2458,18 +2434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalModel: 0
   reelRoot: {fileID: 438274863}
-  items:
-  - {fileID: 285628694}
-  - {fileID: 1336094618}
-  - {fileID: 2047927285}
-  - {fileID: 1240984925}
-  - {fileID: 500724845}
-  itemImages:
-  - {fileID: 285628695}
-  - {fileID: 1336094619}
-  - {fileID: 2047927286}
-  - {fileID: 1240984926}
-  - {fileID: 500724846}
   symbols:
   - {fileID: 21300000, guid: 585110659329d724694959851f89e18a, type: 3}
   - {fileID: 21300000, guid: f862a750c0a12ad46b343504fcbce8c2, type: 3}
@@ -2881,7 +2845,7 @@ MonoBehaviour:
   globalModel: 0
   enabledImage: {fileID: 2041157102}
   disabledImage: {fileID: 1199731904}
-  buttonTextGraphic: {fileID: 0}
+  buttonTextGraphic: {fileID: 1678437335}
   enabledTextColor: {r: 1, g: 0.78431374, b: 0.09411765, a: 1}
   disabledTextColor: {r: 1, g: 1, b: 1, a: 1}
   buttonName: Start
